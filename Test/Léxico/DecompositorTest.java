@@ -16,7 +16,7 @@ public class DecompositorTest {
 	
 	@Test
 	public void testprocess() {
-		instance.process();
+		instance.process();// method uses all other method if it's correct no need to test others
 	}
 
 }
