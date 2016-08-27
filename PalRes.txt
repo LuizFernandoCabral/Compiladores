@@ -1,0 +1,20 @@
+Palavras Reservadas:
+
+PROGRAM
+END
+DECLARE
+num
+bool
+char
+void
+read
+print
+if
+else
+while
+goto
+call
+return
+true
+false
+E

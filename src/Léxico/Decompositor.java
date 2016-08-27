@@ -5,6 +5,8 @@ package Léxico;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Luiz
@@ -12,26 +14,31 @@ import java.nio.charset.Charset;
  */
 public class Decompositor {
 
-	static InputStream in;
-	static OutputStream out;
-	static Reader reader;
-	static Charset encoding;
-	static String allChar;// Contains all words in file separated by space
+	protected static InputStream in;
+	protected static OutputStream out;
+	protected static Reader reader;
+	protected static Charset encoding;
+	protected static List<String> allChar;// Contains all words in file separated by space
+	protected static boolean write;
+	
 	
 	/**
 	 * Constructor set Input and Output file, and initialize class variables
 	 * @param filein name for input file
 	 * @param fileout name for output file
+	 * @param toWrite whether to write to output or not
 	 */
-	Decompositor (String filein, String fileout) {
-		 try {
+	Decompositor (String filein, String fileout, boolean toWrite) {
+		encoding = Charset.defaultCharset();
+		allChar = new ArrayList<>();
+		write = toWrite;
+		try {
 			in = new FileInputStream(filein);
-			out = new FileOutputStream(fileout);
+			if (write)
+				out = new FileOutputStream(fileout);
 		} catch (FileNotFoundException e) {
 			System.out.println("File not Found");
 		}
-		 encoding = Charset.defaultCharset();
-		 allChar = "";
 	}
 	
 	/**
@@ -44,7 +51,11 @@ public class Decompositor {
 		createOutputLine(0, ' ', 2);
 	}
 	
-	public String getCharStr(){
+	/**
+	 * Simple getter
+	 * @return allchar String Contains all words in file separated by space
+	 */
+	public List<String> getAll(){
 		return allChar;
 	}
 	
@@ -99,22 +110,23 @@ public class Decompositor {
     			switch (r){
     				case 9:
 						str += "\\TAB		";
+    					allChar.add("\\TAB");
 						break;
     				case 10:
     					str += "\\LINE_FEED	";
     					createOutputLine(0, ' ', 0);
-    					allChar += ' ';
     					break;
     				case 13:
-    					str += "\\CAR_RETURN";
+    					str += "\\CAR_RETURN ";
+    					allChar.add("\\EndLine");
     					break;
     				case 32:
     					str += "\\space		";
-    					allChar += ' ';
+    					allChar.add("\\space");
     					break;
     				default:
     					str += ch + "			";
-    					allChar += ch;
+    					allChar.add("" + ch);
     					break;
     			}
     			str += " ASCII 0x";
@@ -125,7 +137,8 @@ public class Decompositor {
     			break;
     	}
     	str += "\n";
-    	WriteOutFile(str);
+    	if (write)
+    		WriteOutFile(str);
     }
     
     /**

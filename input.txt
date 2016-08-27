@@ -1,5 +1,10 @@
-int a = 0;
-if (a == 0)
-	a = 1;
-else
-	a = 2;
+int a1;
+#Declare b = 2;
+a1 = -10.1E-1.2
+int 0a;
+if (a == 0) {
+	a = 120 - 10;
+	}
+else {
+	a = 2414;
+	}

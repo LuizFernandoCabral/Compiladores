@@ -1,6 +1,6 @@
 package Léxico;
 
-import static org.junit.Assert.*;
+import java.util.Scanner;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,15 +8,26 @@ import org.junit.Test;
 public class DecompositorTest {
 
 	protected Decompositor instance;
+	protected String write, in, out;
 	
 	@Before
 	public void setUp() {
-		 instance = new Decompositor("input.txt", "output.txt");
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Deseja realizar rastro do Decompositor char-by-char(s/n)?");
+		write = sc.next();
+		System.out.println("Nome arquivo fonte (com a extensão)?");
+		in = sc.next();
+		if (write.contains("s"))
+			instance = new Decompositor(in, "output.txt", true);
+		else
+			instance = new Decompositor(in, "output.txt", false);
+		sc.close();
 	}
 	
 	@Test
 	public void testprocess() {
 		instance.process();// method uses all other method if it's correct no need to test others
+		System.out.println(instance.getAll());
 	}
 
 }

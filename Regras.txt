@@ -1,0 +1,6 @@
+A: RT
+S: A, B, C, D
+I: A
+F: B, C, D
+R: {((A, \space), (A)); ((A, \TAB), (A)); ((A, \EndLine), (A)); ((A, \digit), (B)); ((A, .), (B)); ((B, .), (B)); ((B, \digit), (B)); ((A, \letter), (C)); ((C, \letter), (C)); ((C, \digit), (C)); ((A, \others), (D)); ((D, \others)), (D))}
+.

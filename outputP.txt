@@ -1,0 +1,140 @@
+Input: i; Rule: (C, \letter) -> C
+Input: n; Rule: (C, \letter) -> C
+Input: t; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: a; Rule: (C, \letter) -> C
+Input: 1; Rule: (C, \digit) -> C
+End of pre-atom.
+Input: ;; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: #; Rule: (D, \others) -> D
+End of pre-atom.
+Input: D; Rule: (C, \letter) -> C
+Input: e; Rule: (C, \letter) -> C
+Input: c; Rule: (C, \letter) -> C
+Input: l; Rule: (C, \letter) -> C
+Input: a; Rule: (C, \letter) -> C
+Input: r; Rule: (C, \letter) -> C
+Input: e; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: b; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: =; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 2; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: ;; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: a; Rule: (C, \letter) -> C
+Input: 1; Rule: (C, \digit) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: =; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: -; Rule: (D, \others) -> D
+End of pre-atom.
+Input: 1; Rule: (B, \digit) -> B
+Input: 0; Rule: (B, \digit) -> B
+Input: .; Rule: (B, .) -> B
+Input: 1; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: E; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: -; Rule: (D, \others) -> D
+End of pre-atom.
+Input: 1; Rule: (B, \digit) -> B
+Input: .; Rule: (B, .) -> B
+Input: 2; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: i; Rule: (C, \letter) -> C
+Input: n; Rule: (C, \letter) -> C
+Input: t; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 0; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: a; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: ;; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: i; Rule: (C, \letter) -> C
+Input: f; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: (; Rule: (D, \others) -> D
+End of pre-atom.
+Input: a; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: =; Rule: (D, \others) -> D
+Input: =; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 0; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: ); Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: {; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: \TAB; Rule: (A, \TAB) -> A
+Input: a; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: =; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 1; Rule: (B, \digit) -> B
+Input: 2; Rule: (B, \digit) -> B
+Input: 0; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: -; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 1; Rule: (B, \digit) -> B
+Input: 0; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: ;; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: \TAB; Rule: (A, \TAB) -> A
+Input: }; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: e; Rule: (C, \letter) -> C
+Input: l; Rule: (C, \letter) -> C
+Input: s; Rule: (C, \letter) -> C
+Input: e; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: {; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: \TAB; Rule: (A, \TAB) -> A
+Input: a; Rule: (C, \letter) -> C
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: =; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \space; Rule: (A, \space) -> A
+Input: 2; Rule: (B, \digit) -> B
+Input: 4; Rule: (B, \digit) -> B
+Input: 1; Rule: (B, \digit) -> B
+Input: 4; Rule: (B, \digit) -> B
+End of pre-atom.
+Input: ;; Rule: (D, \others) -> D
+End of pre-atom.
+Input: \EndLine; Rule: (A, \EndLine) -> A
+Input: \TAB; Rule: (A, \TAB) -> A
+Input: }; Rule: (D, \others) -> D
