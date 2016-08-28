@@ -1,10 +1,14 @@
-int a1;
-#Declare b = 2;
-a1 = -10.1E-1.2
-int 0a;
+PROGRAM
+num aif;
+#DECLARE b = 2;
+a1 = -10.1EE-1.2
+num 0a;
+num a;
+a = .2;
 if (a == 0) {
 	a = 120 - 10;
 	}
 else {
 	a = 2414;
 	}
+END

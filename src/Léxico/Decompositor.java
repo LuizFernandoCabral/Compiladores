@@ -7,12 +7,13 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 /**
  * @author Luiz
  * Class responsible to break a input file char-by-char
  */
-public class Decompositor {
+public class Decompositor implements Iterable<Character>{
 
 	protected static InputStream in;
 	protected static OutputStream out;
@@ -40,54 +41,6 @@ public class Decompositor {
 			System.out.println("File not Found");
 		}
 	}
-	
-	/**
-	 * Separate char by char from input file and 
-	 * write to output file
-	 */
-	public void process () {
-		createOutputLine(0, ' ', -1);
-		handleFile();
-		createOutputLine(0, ' ', 2);
-	}
-	
-	/**
-	 * Simple getter
-	 * @return allchar String Contains all words in file separated by space
-	 */
-	public List<String> getAll(){
-		return allChar;
-	}
-	
-	/**
-	 * Start reading input file
-	 */
-    private static void handleFile() {
-        reader = new InputStreamReader(in, encoding);
-        // buffer for efficiency
-        Reader buffer = new BufferedReader(reader); 
-        handleCharacters(buffer);
-    }
-
-    /**
-     * Get char by char
-     * @param reader the whole input file, buffered
-     */
-    private static void handleCharacters(Reader reader){
-        int r = 0;
-        while (r != -1) {
-        	try {
-        		r = reader.read();
-        	} catch (IOException e) {
-        		System.out.println("Something in file is wrong");
-        	}
-        	if (r == -1) {
-        		break;
-        	}
-            char ch = (char) r;
-            createOutputLine(r, ch, 1);
-        }
-    }
     
     /**
      * Create each line for output, depending on given char
@@ -142,6 +95,14 @@ public class Decompositor {
     }
     
     /**
+     * A simple getter
+     * @return a list of all chars found
+     */
+	public static List<String> getAllChar() {
+		return allChar;
+	}
+    
+    /**
      * Write a given string to output file
      * @param str the given string to write
      */
@@ -152,4 +113,56 @@ public class Decompositor {
 			System.out.println("Could not write to Output File");
 		}
     }
+
+	@Override
+	public Iterator<Character> iterator() {
+		return new DecompIterator();
+	}
+	
+	 /**
+	  * The nested Iterator for class Decompositor
+	  */
+	public class DecompIterator implements Iterator<Character> {
+
+		int r = 0;// keep each char read in int value
+		boolean begin = true;// determines whether it is begining or if it has already begun
+		Reader buffer = null;
+		
+		@Override
+		public boolean hasNext() {
+			return r!=-1;
+		}
+
+		@Override
+		public Character next() {
+			if (begin) {
+				reader = new InputStreamReader(in, encoding);
+		        // buffer for efficiency
+		        buffer = new BufferedReader(reader);
+				createOutputLine(0, ' ', -1);
+				begin = false;
+			}
+			
+			try {
+        		r = buffer.read();
+        	} catch (IOException e) {
+        		System.out.println("Something in file is wrong while reading");
+        	}
+			
+			if (r == -1){
+				try {
+					reader.close();
+					buffer.close();
+				} catch (IOException e) {
+					System.out.println("Something in file is wrong while closing it");
+				}
+				createOutputLine(0, ' ', 2);
+			}
+			
+			char ch = (char) r;
+            createOutputLine(r, ch, 1);
+            return ch;
+		}
+		
+	}
 }

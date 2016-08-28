@@ -1,0 +1,16 @@
+Routine			RT = 'PROGRAM' ID ';' { LN } 'END' .
+Line			LN = ( '#DECLARE' ID '=' CO | VR | [ ID':' ] ( "" | RD | WR | VL '=' OP | SR | IF | LP | "goto" ID | CA | "return" { OP } ) ) ';' .
+Var 			VR = ('num' | 'bool' | 'char' | 'void') VarIdent [ '[' Num ']' ] .
+Read 			RD = "read" VL { “,” VL } .
+Print 			WR = "print(" ( OP | '"' { letter | digit | special } '"' [ OP ] ) ')' .
+SubRoutine		SR = VR '(' { VR } ") {" { LN } "}"  .
+If 				IF= "if" '(' OP ") {" { LN } '}' [ "else {" { LN } '}'  ] .
+Loop 			LP = "while" '(' OP ") {" { LN } '}' .
+Call 			CA = "call" ID '(' [ OP { ',' OP } ] ')' .
+VarList			VL =  ID [ '[' OP ']' ] .
+Expression 		OP = SS [ ( “>=” | “>” | “<” | “<=” | “==” | "!=" | "&&" | "||") SS ] .
+Exp 			SS = [ “-” ] ( CO | VL | NM | “(” OP “)” ) { ( “*” | “/” | “\” | "EE" ) ( CO | VL | NM | “(” OP “)” ) } { ( “+” | “-” ) ( CO | VL | NM | “(” OP “)” ) { ( “*” | “/” | “\” ) ( CO | VL | NM | “(” OP “)” ) } } .
+Constant 		CO = NM | “true” | “false” | ID .
+Ident 			ID = letter { letter | digit } .
+Num 			NM = ( DN [ “.” { DN } ] | "." DN ) .
+Int 			DN = digit { digit } .

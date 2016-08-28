@@ -35,7 +35,6 @@ public class preCat {
 	public preCat(List<String> chars, String pre, String fileout, boolean towrite) {
 		this.chars = chars;
 		write = towrite;
-		System.out.println(chars);
 		precat = new Automato(pre);
 		precat.Construct();
 		words = new ArrayList<>();
@@ -48,13 +47,14 @@ public class preCat {
 				System.out.println("Output file not Found");
 			}
 		}
+		process();
 	}
 	
 	/**
 	 * Uses the pre categorization automato to check the input file 
 	 * and separate Id, numeral and special
 	 */
-	public void process() {
+	private void process() {
 		String EstAtual, SyAtual, str = "", aux;
 		Maquina AutoAtual = precat.AutoIni();
 		
@@ -67,8 +67,8 @@ public class preCat {
 			SyAtual = SyAtual.replaceAll("^[^\\\\A-Za-z0-9.]", "\\\\others");
 			
 			try {
-				EstAtual = AutoAtual.searchRule(EstAtual, SyAtual).getOut();
 				WriteOutFile("Input: " + aux + "; Rule: " + AutoAtual.searchRule(EstAtual, SyAtual).toString());
+				EstAtual = AutoAtual.searchRule(EstAtual, SyAtual).getOut();
 				chars.remove(aux);
 				str += aux;
 			} catch (NotFound e) {

@@ -5,14 +5,15 @@ import java.util.Scanner;
 import org.junit.Before;
 import org.junit.Test;
 
-public class preCatTest {
+public class posCatTest {
 
 	protected Decompositor Decomp;
-	protected preCat instance;
+	protected preCat precat;
+	protected posCat instance;
 	protected String writeD, writeP, in, out;
 	
 	@Before
-	public void setUp() {
+	public void setUp() throws Exception {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Deseja realizar rastro do Decompositor char-by-char(s/n)?");
 		writeD = sc.next();
@@ -26,16 +27,17 @@ public class preCatTest {
 			Decomp = new Decompositor(in, "outputD.txt", false);
 		sc.close();
 		if (writeP.contains("s"))
-			instance = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", true);
+			precat = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", true);
 		else
-			instance = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", false);
+			precat = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", false);
+		instance = new posCat(precat.getWords());
 	}
-	
+
 	@Test
 	public void test() {
-		System.out.println(instance.getWords());
-		System.out.println(instance.getNum());
-		System.out.println(instance.getSpecials());
+		System.out.println(precat.getWords());
+		System.out.println(instance.getPalRes());
+		System.out.println(instance.getId());
 	}
 
 }
