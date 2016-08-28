@@ -14,9 +14,8 @@ public class AnalisadorLexicoTest {
 
 	@Test
 	public void test() {
-		System.out.println(instance.getIdAtomo());
-		System.out.println(instance.getNumAtomo());
-		System.out.println(instance.getResAtomo());
+		for (String str : instance)
+			System.out.println(str);
 	}
 
 }

@@ -13,7 +13,7 @@ import java.util.Iterator;
  * @author Luiz
  * Class responsible to break a input file char-by-char
  */
-public class Decompositor implements Iterable<Character>{
+public class Decompositor implements Iterable<String>{
 
 	protected static InputStream in;
 	protected static OutputStream out;
@@ -29,14 +29,14 @@ public class Decompositor implements Iterable<Character>{
 	 * @param fileout name for output file
 	 * @param toWrite whether to write to output or not
 	 */
-	Decompositor (String filein, String fileout, boolean toWrite) {
+	Decompositor (String filein, OutputStream fileout, boolean toWrite) {
 		encoding = Charset.defaultCharset();
 		allChar = new ArrayList<>();
 		write = toWrite;
 		try {
 			in = new FileInputStream(filein);
 			if (write)
-				out = new FileOutputStream(fileout);
+				out = fileout;
 		} catch (FileNotFoundException e) {
 			System.out.println("File not Found");
 		}
@@ -50,10 +50,10 @@ public class Decompositor implements Iterable<Character>{
      * regular characters(1), and end of file(2)
      */
     private static void createOutputLine (int r, char ch, int flag) {
-    	String str = " ";
+    	String str = "Decompositor: ";
     	switch (flag){
     		case -1:
-    			str += "BEGIN FILE";
+    			str += "BEGIN FILE\n";
     			break;
     		case 0:
     			str += "NEW LINE";
@@ -72,6 +72,7 @@ public class Decompositor implements Iterable<Character>{
     				case 13:
     					str += "\\CAR_RETURN ";
     					allChar.add("\\EndLine");
+    					createOutputLine(0, ' ', 2);
     					break;
     				case 32:
     					str += "\\space		";
@@ -86,6 +87,9 @@ public class Decompositor implements Iterable<Character>{
     			str += String.format("%02X", r);
     			break;
     		case 2:
+    			str += "END LINE";
+    			break;
+    		case 3:
     			str += "END OF FILE";
     			break;
     	}
@@ -115,14 +119,14 @@ public class Decompositor implements Iterable<Character>{
     }
 
 	@Override
-	public Iterator<Character> iterator() {
+	public Iterator<String> iterator() {
 		return new DecompIterator();
 	}
 	
 	 /**
 	  * The nested Iterator for class Decompositor
 	  */
-	public class DecompIterator implements Iterator<Character> {
+	public class DecompIterator implements Iterator<String> {
 
 		int r = 0;// keep each char read in int value
 		boolean begin = true;// determines whether it is begining or if it has already begun
@@ -134,7 +138,10 @@ public class Decompositor implements Iterable<Character>{
 		}
 
 		@Override
-		public Character next() {
+		public String next() {
+			char ch;
+            String str;
+            
 			if (begin) {
 				reader = new InputStreamReader(in, encoding);
 		        // buffer for efficiency
@@ -156,12 +163,30 @@ public class Decompositor implements Iterable<Character>{
 				} catch (IOException e) {
 					System.out.println("Something in file is wrong while closing it");
 				}
-				createOutputLine(0, ' ', 2);
+				createOutputLine(0, ' ', 3);
+				return "";
 			}
 			
-			char ch = (char) r;
+			ch = (char) r;
             createOutputLine(r, ch, 1);
-            return ch;
+            switch (r){
+				case 9:
+					str = "\\TAB";
+					break;
+				case 10:
+					str = "";
+					break;
+				case 13:
+					str = "\\EndLine";
+					break;
+				case 32:
+					str = "\\space";
+					break;
+				default:
+					str = "" + ch;
+					break;
+            }
+            return str;
 		}
 		
 	}

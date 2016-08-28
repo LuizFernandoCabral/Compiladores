@@ -3,49 +3,66 @@
  */
 package Léxico;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author Luiz
  *
  */
 public class posCat {
 	
-	protected final List<String> ID;
 	
 	/**
 	 * Pos Categorizer, search whether a word is a reserved word or Id
 	 */
-	public posCat(List<String> id) {
-		ID = id;
+	public posCat() {
 	}
 	
 	/**
-	 * Get all reserved words
-	 * @return List<String> all reserved words
+	 * Table with all reserved words
 	 */
-	public List<String> getPalRes(){
-		List<String> found = new ArrayList<>();
-		for (String id : ID) {
-			if (PalRes.search(id)&&!found.contains(id)){
-				found.add(id);
-			}
+	public enum PalRes {
+		A("PROGRAM"),
+		B("END"),
+		C("DECLARE"),
+		D("num"),
+		E("bool"),
+		F("char"),
+		G("void"),
+		H("read"),
+		I("print"),
+		J("if"),
+		K("else"),
+		L("while"),
+		M("goto"),
+		N("call"),
+		O("return"),
+		P("true"),
+		Q("false"),
+		R("EE");
+		
+		private final String text;
+		
+		PalRes(String txt){
+			text = txt;
 		}
-		return found;
+		
+		public static boolean search (String other) {
+			for (PalRes pal : values()) {
+				if (pal.text.equals(other)){
+					return true;
+				}
+			}
+			return false;
+		}
 	}
-
+	
 	/**
-	 * Get all ID
-	 * @return List<String> of all Ids, as many times as they appear
+	 * Check whether a word is a reserved word or Id
+	 * @param id the word to be checked
+	 * @return {@code id.isPalRes();}
 	 */
-	public List<String> getId(){
-		List<String> notfound = new ArrayList<>();
-		for (String id : ID) {
-			if (!PalRes.search(id)){
-				notfound.add(id);
-			}
-		}
-		return notfound;
+	public boolean isPalRes(String id){
+		return PalRes.search(id);
 	}
+	
+	
 }

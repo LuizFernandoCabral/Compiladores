@@ -1,158 +1,507 @@
- BEGIN FILE
- CHARACTER: P			 ASCII 0x50
- CHARACTER: R			 ASCII 0x52
- CHARACTER: O			 ASCII 0x4F
- CHARACTER: G			 ASCII 0x47
- CHARACTER: R			 ASCII 0x52
- CHARACTER: A			 ASCII 0x41
- CHARACTER: M			 ASCII 0x4D
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: n			 ASCII 0x6E
- CHARACTER: u			 ASCII 0x75
- CHARACTER: m			 ASCII 0x6D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: a			 ASCII 0x61
- CHARACTER: i			 ASCII 0x69
- CHARACTER: f			 ASCII 0x66
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: #			 ASCII 0x23
- CHARACTER: D			 ASCII 0x44
- CHARACTER: E			 ASCII 0x45
- CHARACTER: C			 ASCII 0x43
- CHARACTER: L			 ASCII 0x4C
- CHARACTER: A			 ASCII 0x41
- CHARACTER: R			 ASCII 0x52
- CHARACTER: E			 ASCII 0x45
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: b			 ASCII 0x62
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 2			 ASCII 0x32
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: a			 ASCII 0x61
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: -			 ASCII 0x2D
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: 0			 ASCII 0x30
- CHARACTER: .			 ASCII 0x2E
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: E			 ASCII 0x45
- CHARACTER: E			 ASCII 0x45
- CHARACTER: -			 ASCII 0x2D
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: .			 ASCII 0x2E
- CHARACTER: 2			 ASCII 0x32
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: n			 ASCII 0x6E
- CHARACTER: u			 ASCII 0x75
- CHARACTER: m			 ASCII 0x6D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 0			 ASCII 0x30
- CHARACTER: a			 ASCII 0x61
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: n			 ASCII 0x6E
- CHARACTER: u			 ASCII 0x75
- CHARACTER: m			 ASCII 0x6D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: a			 ASCII 0x61
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: a			 ASCII 0x61
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: .			 ASCII 0x2E
- CHARACTER: 2			 ASCII 0x32
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: i			 ASCII 0x69
- CHARACTER: f			 ASCII 0x66
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: (			 ASCII 0x28
- CHARACTER: a			 ASCII 0x61
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 0			 ASCII 0x30
- CHARACTER: )			 ASCII 0x29
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: {			 ASCII 0x7B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: \TAB		 ASCII 0x09
- CHARACTER: a			 ASCII 0x61
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: 2			 ASCII 0x32
- CHARACTER: 0			 ASCII 0x30
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: -			 ASCII 0x2D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: 0			 ASCII 0x30
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: \TAB		 ASCII 0x09
- CHARACTER: }			 ASCII 0x7D
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: e			 ASCII 0x65
- CHARACTER: l			 ASCII 0x6C
- CHARACTER: s			 ASCII 0x73
- CHARACTER: e			 ASCII 0x65
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: {			 ASCII 0x7B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: \TAB		 ASCII 0x09
- CHARACTER: a			 ASCII 0x61
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: =			 ASCII 0x3D
- CHARACTER: \space		 ASCII 0x20
- CHARACTER: 2			 ASCII 0x32
- CHARACTER: 4			 ASCII 0x34
- CHARACTER: 1			 ASCII 0x31
- CHARACTER: 4			 ASCII 0x34
- CHARACTER: ;			 ASCII 0x3B
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: \TAB		 ASCII 0x09
- CHARACTER: }			 ASCII 0x7D
- CHARACTER: \CAR_RETURN  ASCII 0x0D
- NEW LINE
- CHARACTER: \LINE_FEED	 ASCII 0x0A
- CHARACTER: E			 ASCII 0x45
- CHARACTER: N			 ASCII 0x4E
- CHARACTER: D			 ASCII 0x44
- END OF FILE
- CHARACTER: ?			 ASCII 0xFFFFFFFF
+Legenda:
+Atomo Identificador = (Posição, String_ID)
+Atomo Numeral = (String, Valor)
+Atomo Palavra Reservada = (Palavra, linha_contem_palavra)
+Atomo Special = (String_special)
+
+Eventos:
+Decompositor: BEGIN FILE
+
+Decompositor: CHARACTER: P			 ASCII 0x50
+PreCat: P; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: R			 ASCII 0x52
+PreCat: R; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: O			 ASCII 0x4F
+PreCat: O; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: G			 ASCII 0x47
+PreCat: G; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: R			 ASCII 0x52
+PreCat: R; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: A			 ASCII 0x41
+PreCat: A; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: M			 ASCII 0x4D
+PreCat: M; Rule: (C, \letter) -> C
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (PROGRAM, [PROGRAM]).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: n			 ASCII 0x6E
+PreCat: n; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: u			 ASCII 0x75
+PreCat: u; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: m			 ASCII 0x6D
+PreCat: m; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (num, [num aif;]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: i			 ASCII 0x69
+PreCat: i; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: f			 ASCII 0x66
+PreCat: f; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo ID: (aif, 0).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: #			 ASCII 0x23
+PreCat: #; Rule: (A, \others) -> D
+Decompositor: CHARACTER: D			 ASCII 0x44
+PreCat: End of pre-atom.
+
+Atomo Special: (#).
+
+PreCat: D; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: E			 ASCII 0x45
+PreCat: E; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: C			 ASCII 0x43
+PreCat: C; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: L			 ASCII 0x4C
+PreCat: L; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: A			 ASCII 0x41
+PreCat: A; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: R			 ASCII 0x52
+PreCat: R; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: E			 ASCII 0x45
+PreCat: E; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (DECLARE, [#DECLARE b = 2;]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: b			 ASCII 0x62
+PreCat: b; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (b, 1).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (=).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 2			 ASCII 0x32
+PreCat: 2; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo Numeral: (2, 2.0).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: 1; Rule: (C, \digit) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (a1, 2).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (=).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: -			 ASCII 0x2D
+PreCat: -; Rule: (A, \others) -> D
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: End of pre-atom.
+
+Atomo Special: (-).
+
+PreCat: 1; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: 0			 ASCII 0x30
+PreCat: 0; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: .			 ASCII 0x2E
+PreCat: .; Rule: (B, .) -> B
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: 1; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: E			 ASCII 0x45
+PreCat: End of pre-atom.
+
+Atomo Special: (10.1).
+
+PreCat: E; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: E			 ASCII 0x45
+PreCat: E; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: -			 ASCII 0x2D
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (EE, [a1 = -10.1EE-1.2]).
+
+PreCat: -; Rule: (A, \others) -> D
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: End of pre-atom.
+
+Atomo Special: (-).
+
+PreCat: 1; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: .			 ASCII 0x2E
+PreCat: .; Rule: (B, .) -> B
+Decompositor: CHARACTER: 2			 ASCII 0x32
+PreCat: 2; Rule: (B, \digit) -> B
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (1.2).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: n			 ASCII 0x6E
+PreCat: n; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: u			 ASCII 0x75
+PreCat: u; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: m			 ASCII 0x6D
+PreCat: m; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (num, [num 0a;]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 0			 ASCII 0x30
+PreCat: 0; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: End of pre-atom.
+
+Atomo Numeral: (0, 0.0).
+
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: n			 ASCII 0x6E
+PreCat: n; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: u			 ASCII 0x75
+PreCat: u; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: m			 ASCII 0x6D
+PreCat: m; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (num, [num a;]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (=).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: .			 ASCII 0x2E
+PreCat: .; Rule: (A, .) -> B
+Decompositor: CHARACTER: 2			 ASCII 0x32
+PreCat: 2; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo Numeral: (.2, 0.2).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: i			 ASCII 0x69
+PreCat: i; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: f			 ASCII 0x66
+PreCat: f; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (if, [if (a == 0) {]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: (			 ASCII 0x28
+PreCat: (; Rule: (A, \others) -> D
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: End of pre-atom.
+
+Atomo Special: (().
+
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (D, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (==).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 0			 ASCII 0x30
+PreCat: 0; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: )			 ASCII 0x29
+PreCat: End of pre-atom.
+
+Atomo Numeral: (0, 0.0).
+
+PreCat: ); Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: ()).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: {			 ASCII 0x7B
+PreCat: {; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: ({).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: \TAB		 ASCII 0x09
+PreCat: \TAB; Rule: (A, \TAB) -> A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (=).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: 1; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: 2			 ASCII 0x32
+PreCat: 2; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: 0			 ASCII 0x30
+PreCat: 0; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Numeral: (120, 120.0).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: -			 ASCII 0x2D
+PreCat: -; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (-).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: 1; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: 0			 ASCII 0x30
+PreCat: 0; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo Numeral: (10, 10.0).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: \TAB		 ASCII 0x09
+PreCat: \TAB; Rule: (A, \TAB) -> A
+Decompositor: CHARACTER: }			 ASCII 0x7D
+PreCat: }; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (}).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: e			 ASCII 0x65
+PreCat: e; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: l			 ASCII 0x6C
+PreCat: l; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: s			 ASCII 0x73
+PreCat: s; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: e			 ASCII 0x65
+PreCat: e; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (else, [else {]).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: {			 ASCII 0x7B
+PreCat: {; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: ({).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: \TAB		 ASCII 0x09
+PreCat: \TAB; Rule: (A, \TAB) -> A
+Decompositor: CHARACTER: a			 ASCII 0x61
+PreCat: a; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo ID: (a, 3).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: =			 ASCII 0x3D
+PreCat: =; Rule: (A, \others) -> D
+Decompositor: CHARACTER: \space		 ASCII 0x20
+PreCat: End of pre-atom.
+
+Atomo Special: (=).
+
+PreCat: \space; Rule: (A, \space) -> A
+Decompositor: CHARACTER: 2			 ASCII 0x32
+PreCat: 2; Rule: (A, \digit) -> B
+Decompositor: CHARACTER: 4			 ASCII 0x34
+PreCat: 4; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: 1			 ASCII 0x31
+PreCat: 1; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: 4			 ASCII 0x34
+PreCat: 4; Rule: (B, \digit) -> B
+Decompositor: CHARACTER: ;			 ASCII 0x3B
+PreCat: End of pre-atom.
+
+Atomo Numeral: (2414, 2414.0).
+
+PreCat: ;; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (;).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: \TAB		 ASCII 0x09
+PreCat: \TAB; Rule: (A, \TAB) -> A
+Decompositor: CHARACTER: }			 ASCII 0x7D
+PreCat: }; Rule: (A, \others) -> D
+Decompositor: END LINE
+Decompositor: CHARACTER: \CAR_RETURN  ASCII 0x0D
+PreCat: End of pre-atom.
+
+Atomo Special: (}).
+
+PreCat: \EndLine; Rule: (A, \EndLine) -> A
+Decompositor: NEW LINE
+Decompositor: CHARACTER: \LINE_FEED	 ASCII 0x0A
+Decompositor: CHARACTER: E			 ASCII 0x45
+PreCat: E; Rule: (A, \letter) -> C
+Decompositor: CHARACTER: N			 ASCII 0x4E
+PreCat: N; Rule: (C, \letter) -> C
+Decompositor: CHARACTER: D			 ASCII 0x44
+PreCat: D; Rule: (C, \letter) -> C
+Decompositor: END OF FILE
+PreCat: End of pre-atom.
+
+Atomo Palavra Reservada: (END, [END]).
+

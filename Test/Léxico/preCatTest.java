@@ -1,5 +1,11 @@
 package Léxico;
 
+import static org.junit.Assert.assertEquals;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.Scanner;
 
 import org.junit.Before;
@@ -9,33 +15,52 @@ public class preCatTest {
 
 	protected Decompositor Decomp;
 	protected preCat instance;
-	protected String writeD, writeP, in, out;
+	protected OutputStream out;
 	
 	@Before
 	public void setUp() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Deseja realizar rastro do Decompositor char-by-char(s/n)?");
-		writeD = sc.next();
-		System.out.println("Deseja realizar rastro do Pré-Categorizador simbolo-a-simbolo(s/n)?");
-		writeP = sc.next();
-		System.out.println("Nome arquivo fonte (com a extensão)?");
-		in = sc.next();
-		if (writeD.contains("s"))
-			Decomp = new Decompositor(in, "outputD.txt", true);
-		else
-			Decomp = new Decompositor(in, "outputD.txt", false);
-		sc.close();
-		if (writeP.contains("s"))
-			instance = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", true);
-		else
-			instance = new preCat(Decomp.getAll(), "Regras.txt", "outputP.txt", false);
+		try {
+			out = new FileOutputStream("OutputPreCatTest.txt");
+		} catch (FileNotFoundException e) {
+			System.out.println("Output file not Found");
+		};
+		instance = new preCat("input.txt", "Regras.txt", out, false);
 	}
 	
 	@Test
-	public void test() {
-		System.out.println(instance.getWords());
-		System.out.println(instance.getNum());
-		System.out.println(instance.getSpecials());
+	public void testIterator() {
+		int cont = 0;
+		for (String str : instance){
+			if (str == null);
+			cont++;
+		}
+		assertEquals(63, cont);
+	}
+	
+	@Test
+	public void testWrite() {
+		int cont = 0;
+		Scanner sc = null;
+		
+		instance = new preCat("input.txt", "Regras.txt", out, true);
+		
+		for (String str : instance){
+			if (str == null);
+		}
+		
+		try {
+			sc = new Scanner(new File("OutputPreCatTest.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		while (sc.hasNextLine()){
+			sc.nextLine();
+			cont++;
+		}
+		
+		assertEquals(387, cont);
+		
 	}
 
 }

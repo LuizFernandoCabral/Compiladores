@@ -1,5 +1,10 @@
 package Léxico;
 
+import static org.junit.Assert.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 
 import org.junit.Before;
@@ -8,27 +13,49 @@ import org.junit.Test;
 public class DecompositorTest {
 
 	protected Decompositor instance;
-	protected String write, in, out;
 	
 	@Before
 	public void setUp() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Deseja realizar rastro do Decompositor char-by-char(s/n)?");
-		write = sc.next();
-		System.out.println("Nome arquivo fonte (com a extensão)?");
-		in = sc.next();
-		if (write.contains("s"))
-			instance = new Decompositor(in, "output.txt", true);
-		else
-			instance = new Decompositor(in, "output.txt", false);
-		sc.close();
+		instance = new Decompositor("input.txt", null, false);
 	}
 	
 	@Test
-	public void testprocess() {
-		for (char ch : instance){
-			System.out.println(ch);
+	public void testIterable() {
+		int cont = 0;
+		for (String str : instance){
+			str.isEmpty();
+			cont++;
 		}
+		assertEquals(143, cont);
+	}
+	
+	@Test
+	public void testOutput() {
+		int cont = 0;
+		Scanner sc = null;
+		
+		try {
+			instance = new Decompositor("input.txt", new FileOutputStream("OutputDecompTest.txt"), true);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		for (String str : instance){
+			str.replace("", "");
+		}
+		
+		try {
+			sc = new Scanner(new File("OutputDecompTest.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		while (sc.hasNextLine()){
+			sc.nextLine();
+			cont++;
+		}
+		
+		assertEquals(158, cont);
 	}
 
 }
